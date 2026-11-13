@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURORE </title>
+<link rel="stylesheet"  href="style.css"> 
+<link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="top-header">
+<div class="logo-row">
+  <img src="logo.jpg" class="logo" alt="AURORE">
+    <h1 class="main-title">AURORE</h1>
+</div>
+    <p class="subtitle">WEAR YOUR OWN STORY</p>
+  </header>
+<nav class="navbar">
+  <a href="#" onclick="showSection('home'); return false;">Home🏠</a>
+<a href="#" onclick="showSection('about'); return false;">About✨</a>
+<a href="#" onclick="showSection('products'); return false;">Products🛍️</a>
+<a href="#" onclick="showSection('contact'); return false">Contact📞</a>
+<a href="#">Cart🛒 <span id="cartcount">0</span></a>
+<button id="menuBtn">Menu☰</button>
+    </nav>
+  <section id="home" class="home section active">
+<div class="home-text">
+<h2>WELCOME TO AURORE</h2>
+  <p> We are a fashion brand in lagos, Nigeria that creates bold streetwear clothes and jewelry for young people who want to express themselves</p>
+<p>Clothes + Jewelry = Your Full Look</p>
+<a href="#" onclick="showSection('products')" class="btn">Explore Our Collections</a>
+<a href="#" onclick="showSection('contact')" class="btn btn-outline">Book a fitting</a>
+</div>
+</section>
+<section id="about" class="about section">
+<h2>ABOUT AURORE</h2>
+<p>Aurore started in 2026 with one idea:A small fashion business for youths who love comfort, confidence, and style.</p>
+<p>Aurore was found with a goal to create fashion that speaks to the heart of young individuals who dare to be different </p>
+<div class="about-text">
+<h3>OUR MISSION</h3>
+<p>To create affordable and comfortable clothes that tell your story and identity</p>
+<h3>OUR VISION</h3>
+<p>To become Nigeria's most loved youth fashion brand for streetwear and accessories</p>
+<h3>OUR PROMISE AND OBJECTIVE</h3>
+<ul>
+<li>Comfort, Confidence and Style- in every piece</li>
+<li>Promote self-expression through fashion</li>
+</ul>
+</div>
+<div class="about-image">
+</div>
+</section>
+<section id="products" class="products section">
+<h2>SHOP OUR PRODUCTS</h2>
+<p>Quality fashion for you</p>
+<div class="product-grid">
+<article class="product-card" onclick="openCollection('joggers-collection')">
+ <img id="mainpic-1" src="joggers3.jpeg" class="main-img">
+<div class="card-text">
+<h3>Joggers</h3>
+<p>Comfortable streetwear joggers</p>
+<p class="price">₦25,000</p>
+<a href="#" class="btn" onclick="event.preventDefault(); event.stopPropagation(); addToCart('Joggers'); return false;">Add to cart</a>
+<button onclick="openCollection('joggers-collection')">View Joggers Collection</button>
+</div>
+</article>
+<article class="product-card" onclick="openCollection('hoodies-collection')">
+<img id="main pic-2" src="Whatsapp Image 2026-08-09 at 6.18.53 PM.jpeg" class="main-img" onclick="showRemaining('hoodies-remaining')" style="cursor: pointer;">
+<div id="hoodies-remaining" style="display: none;">
+<img src="Whatsapp Image 2026-08-09 at 6.18.53 PM.jpeg">
+<img src="Whatsapp Image 2026-08-09 at 6.18.52 PM.jpeg">
+<button onclick="hideRemaining('hoodies-renaining')">Back</button>
+</div>
+<div class="card-text">
+<h3>OVERSIZED HOODIES</h3>
+<p>Soft, warm hoodie for a relaxed and confident look</p>
+<p class="price">₦30,000</p>
+<a href="#" class="btn" onclick="event.preventDefault();event.stopPropagation(); addToCart('Hoodies'); return false;">Add to cart</a>
+<button onclick="openCollection('hoodies-collection')">View Hoodies Collection</button>
+</div>
+</article>
+<article class="product-card" onclick="openCollection('jewelry-collection')">
+<img id="main pic-3" src="WhatsApp Image 2026-08-09 at 6.19.47 PM..jpeg" class="main-img" onclick="showRemaining('jewelry-remaining')" style="cursor: pointer;">
+<div id="jewelry-remaining" style="display: none;">
+<img src="WhatsApp Image 2026-08-09 at 6.19.47 PM..jpeg">
+<img src="Whatsapp Image 2026-08-09 at 6.22.47 PM.jpeg">
+<img src="WhatsApp Image 2026-08-09 at 6.22.54 PM.jpe.jpeg">
+<img src="Whatsapp Image 2026-08-09 at 6.23.04  PM.jpeg">
+<img src="WhatsApp Image 2026-08-09 at 6.22.48 PM.jpe.jpeg">
+<img src="WhatsApp Image 2026-08-09 at 6.19.42 PM.jpeg">
+<img src="WhatsApp Image 2026-08-09 at 6.19.29 PM..jpeg">
+<img src="WhatsApp Image 2026-08-09 at 6.19.12 PM.jpeg">
+<img src="WhatsApp Image 2026-08-09 at 6.19.11 PM.jpeg">
+<img src="Image 08-09.jpeg">
+<button onclick="hideRemaining('jewelry-collection')">Back</button>
+</div>
+<div class="card-text">
+<h3>Jewelry Collections</h3>
+<p>Exquisite and ethereal</p>
+<p class="price">₦10,000</p>
+<a href="#" class="btn" onclick="event.preventDefault(); event.stopPropagation(); addToCart('Jewelry'); return false;">Add to cart</a>
+<button onclick="openCollection(jewelry-collection)">View Jewelry Collection</button>
+</div>
+</section>
+<div id="joggers-collection" class="collection hidden">
+  <button onclick="goBack()">Bak to shop</button>
+<div class="product-grid">
+<article class="product-card">
+<img src="joggers3.jpeg" class="main-img">
+<div class="card-text">
+<h3>Joggers</h3>
+<p>Comfortable streetwear joggers</p>
+<p class="price">₦25,000</p>
+<a href="#" class="btn" onclick="event.preventDefault(); event.stopPropagation(); addToCart('Joggers')">Add to cart</a>
+</div>
+</article>
+<article class="product-card">
+<img src="Whatsapp Image 2026-08-09 at 6.18.47 PM.jpeg" class="main img">
+<div class="card-text">
+<h3>Joggers</h3>
+<p>Comfortable streetwear joggers</p>
+<p class="price">₦20,000</p>
+<a href="#" class="btn" onclick="event.preventDefault(); event.stopPropagation(); addToCart('Joggers')">Add to cart</a>
+</div>
+</article>
+<article class="product-card">
+<img src="Whatsapp Image 2026-08-09 at 6.18.50 PM.jpeg" class="main img">
+<div class="card-text">
+<h3>Joggers</h3>
+<p>Comfortable streetwear joggers</p>
+<p class="price">19,000</p>
+<a href="#" class="btn" onclick="event.preventDefault(); event.stopPropagation(); addToCart('Joggers')">Add to cart</a>
+</div>
+</article>
+<article class="product-card">
+<img src="joggers 2.jpeg" class="main-img">
+<div class="card-text">
+<h3>Joggers</h3>
+<p>Comfortable streetwear joggers</p>
+<p class="price">₦16,000</p>
+<a href="#" class="btn" onclick="event.preventDefault(); event.stopPropagation(); addToCart('Joggers'); return false;">Add to cart</a>
+</div>
+</article>
+</div>
+</div> 
+</section>
+<div id="hoodies-collection" class="collection hidden">
+<button onclick="goBack()">Back to shop</button>
+  <h2>Hoodies Collection</h2>
+<p>Hoodies with different prices</p>
+<div class="product-grid">
+<article class="product-card">
+<img src="Whatsapp Image 2026-08-09 at 6.18.53 PM.jpeg" class="main-img">
+<div class="card-text">
+<h3>Oversized Hoodies</h3>
+<p>Soft, warm hoodie for a relaxed and confident look</p>
+<p class="price">₦30,000</p>
+<a href="#" class="btn" onclick="event.preventDefault(); event.stopPropagation(); addToCart('hoodies');return false;">Add to cart</a>
+</div>
+</article>
+<article class="product-card">
+<img src="Whatsapp Image 2026-08-09 at 6.18.52 PM.jpeg" class="main-img">
+<div class="card-text">
+<h3>Oversized Hoodies</h3>
+<p class="price">₦25,000</p>
+<a href="#" class="btn" onclick="event.preventDefault(); event.stopPropagation(); addToCart('Hoodies');return false;">Add to cart</a>
+</div>
+</article>
+</div>
+</div>
+<div id="jewelry-collection" class="collection hidden">
+<button onclick="goBack()">Back to shop</button>
+  <h2>Jewelry Collection</h2>
+<p>varieties of jewelry</p>
+<article class="product-card">
+<img src="WhatsApp Image 2026-08-09 at 6.22.54 PM.jpe.jpeg" class="main-img">
+<div class="card-text">
+<h3>Necklace</h3>
+<p>Exquisite and ethereal</p>
+<p class="price">₦10,000</p>
+<a href="#" class="btn" onclick="event.preventDefault(); event.stopPropagation(); addToCart('Jewelry')">Add to cart</a>
+</div>
+</article>
+<article class="product-card">
+<img src="Whatsapp Image 2026-08-09 at 6.22.47 PM.jpeg" class="main-img">
+<img src="Whatsapp Image 2026-08-09 at 6.23.04  PM.jpeg" class="main-img">
+<img src="WhatsApp Image 2026-08-09 at 6.22.48 PM.jpe.jpeg" class="main-img">
+<img src="WhatsApp Image 2026-08-09 at 6.19.47 PM..jpeg" class="main-img">
+<img src="WhatsApp Image 2026-08-09 at 6.19.42 PM.jpeg" class="main-img">
+<img src="WhatsApp Image 2026-08-09 at 6.19.29 PM..jpeg" class="main-img">
+<img src="WhatsApp Image 2026-08-09 at 6.19.12 PM.jpeg" class="main-img">
+<img src="WhatsApp Image 2026-08-09 at 6.19.11 PM.jpeg" class="main-img">
+<div class="card-text">
+<h3>bracelets and earrings</h3>
+<p>Exquisite and ethereal</p>
+<p class="price">₦8000</p>
+<a href="#" class="btn" onclick="event.preventDefault(); event.stopPropagation(); addToCart('Jewelry')">Add to cart</a>
+</div>
+</article>
+</div>
+</div>
+  <section id="contact" class="contact section">
+<h2>Contact Us</h2>
+<div class="contact-flex">
+  <div class="contact-info">
+<p><strong>Address:</strong>25 Peterimemesi Street Satellite Town,Lagos, Nigeria.</p>
+<p><strong>Email:</strong>chinemeremi702@gmail.com</p>
+<p><strong>Phone no:</strong>+2349136480452</p>
+<p><strong>Hours:</strong>'Mon-Sat' 8am-9pm</p>
+<p id="selectedService">No service selected yet.</p>
+</div>
+<form id="contactForm" novalidate>
+  <label>FullName <input type="text" id="fullname" placeholder="Your full name"></label>
+ <label>EmailAddress <input type="email" id="email" placeholder="you@example.com"></label>
+ <label>Subject <input type="text" id="subject" placeholder="e.g. Custom Tailoring"></label>
+ <label>Message <textarea id="message" rows="4" placeholder="Tell us what you need..."></textarea></label>
+<p id="formError" class="error"></p>
+<p id="formSuccess" class="success"></p>
+<button type="submit" class="btn">Send Message</button>
+<small>This form validates your details and does not send a real message - demo only</small>
+</form>
+</div>
+</section>
+<footer class="footer">
+<div class="footer-flex">
+<div>
+<h3>AURORE</h3>
+<p class="cursive">Wear Your Story</p>
+</div>
+<div>
+<h4>Quick Links</h4>
+  <a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#products">Products</a>
+<a href="#contact">Contact</a>
+<div>
+<h4>Contact</h4>
+ <p>chinemeremi702@gmail.com</p>
+<p>+2349136480452</p>
+<p>Lagos,Nigeria</p>
+</div>
+</div>
+<p class="footer-bottom">&copy; 2026 AURORE. Designed for New Horizon Web Development Project</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+
+
