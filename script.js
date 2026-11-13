@@ -49,25 +49,24 @@ formError.textContent = '';
 formSuccess.textContent = '';
 if (fullName.length <2) {
     formError.textContent = 'Please enter your full name.';
-event.preventDefault();
     return;
 }
 if(!email.includes('@') || !email.includes('.')) {
     formError.textContent = 'Please enter a valid email address.';
-event.preventDefault();
 return;
 }
 if (subject.length <2) {
 formError.textContent = 'Please enter a subject.';
-event.preventDefault();
 return;
 }
 if (message.length <5) {
 formError.textContent = 'Please tell us what us you need, at least 5 characters.';
-event.preventDefault();
 return;
 }
-}
+formSuccess.textContent = 'Thank you ' + fullName + '! Your message has been sent. We will get back to you soon.';
+contactForm.reset();
+document.getElementById('selectedService').textContent = 'No service selected yet.';
+});
 }
 
 
